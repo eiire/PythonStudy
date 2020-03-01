@@ -1,4 +1,4 @@
-# Frog random year
+#                              Frog random year
 # def number_of_frogs(year):
 #     numb_frog = 120
 #     i = 1
@@ -9,7 +9,7 @@
 #
 # print(number_of_frogs(int(input())))
 
-# Fib
+#                               Fib
 # def fib (n):
 #     if n == 0:return 0
 #     if n == 1:return 1
@@ -17,7 +17,7 @@
 #     return res
 # print(fib(3))
 
-# Matrix transpose
+#                              Matrix transpose
 # import sys
 #
 # x, y = sys.stdin.readline().split()
@@ -36,4 +36,23 @@
 # for i in range(int(y)):
 #     print(' '.join(arr_transpose[i]))
 
+#                                        Error and exception (classes)
+import math
+def foo(y):
+    x = y
+    assert y != 1, "AssertionError"
+    x = x / y
+    x = math.exp(y) # inf
+    return x
+
+
+for i in [2000000, 1, 0]:
+    try:
+        foo(i)
+    except ZeroDivisionError as e:
+        print(type(ZeroDivisionError()).__name__)
+    except ArithmeticError as e:
+        print(type(ArithmeticError()).__name__)
+    except AssertionError as e:
+        print(e)
 
