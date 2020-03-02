@@ -1,10 +1,12 @@
-4
+5
 classA
 classB : classA
 classC : classA
 classD : classB classC
-4
+classE : classB
+5
 classA classB
 classB classD
 classC classD
 classD classA
+classA classE
