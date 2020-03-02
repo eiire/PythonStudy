@@ -1,6 +1,4 @@
 import string
-from typing import List
-import sys
 import sys
 
 sys.stdin = open("input.txt", "r")
@@ -36,7 +34,7 @@ def my_input():
         my_str = sys.stdin.readline()
         if my_str.find(':') == -1:
             name = my_str
-            object_hierarchy.add(name.replace('\n', ''), 'None')
+            object_hierarchy.add(name.replace('\n', ''), '')
         else:
             name, parents = my_str.split(":")
             object_hierarchy.add(name, parents)
@@ -49,3 +47,4 @@ def my_input():
 
 
 my_input()
+object_hierarchy.print()
