@@ -1,0 +1,10 @@
+4
+classA
+classB : classA
+classC : classA
+classD : classB classC
+4
+classA classB
+classB classD
+classC classD
+classD classA
