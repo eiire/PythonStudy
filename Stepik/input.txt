@@ -14,7 +14,7 @@ W : V
 6
 A G
 A Z
-A W
-X W
+A WJ
+X
 A X
 X X

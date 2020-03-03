@@ -37,18 +37,31 @@ class Hierarchy:
 
         n_2 = int(sys.stdin.readline())
         for i in range(n_2):
-            #  add check for incorrect class and only one class
-            check = 0
-            my_str = sys.stdin.readline().split(' ')
-            my_str[1] = ''.join(list(filter(lambda ch: ch != '\n', my_str[1])))
-            object_hierarchy.is_base_of(my_str[0], my_str[1])
-            fl = 0
-            # print(self.all_parents)
-            for parents in self.all_parents:
-                if my_str[0] == parents and fl != 1:
-                    print('Yes')
-                    fl = 1
-            if fl == 0:
+            try: #  X parent X and
+                my_str = sys.stdin.readline().split(' ')
+                my_str[1] = ''.join(list(filter(lambda ch: ch != '\n', my_str[1])))
+            except IndexError:
+                my_str += ''.join(list(filter(lambda ch: ch != '\n', my_str[0])))
+                my_str[0] = ''.join(list(filter(lambda ch: ch != '\n', my_str[0])))
+
+            check_nonexistent_class = 0
+            for key in self.dictinary_classes:
+                if my_str[1] == key:
+                    check_nonexistent_class = 1
+
+            if my_str[0] == my_str[1]:
+                print('Yes')
+            elif check_nonexistent_class == 1:
+                object_hierarchy.is_base_of(my_str[0], my_str[1])
+                fl = 0
+                # print(self.all_parents)
+                for parents in self.all_parents:
+                    if my_str[0] == parents and fl != 1:
+                        print('Yes')
+                        fl = 1
+                if fl == 0:
+                    print('No')
+            else:
                 print('No')
             self.all_parents.clear()  # clear list after query
 
