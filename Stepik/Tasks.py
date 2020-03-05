@@ -36,3 +36,31 @@
 #         print(type(ArithmeticError()).__name__)
 #     except AssertionError as e:
 #         print(e)
+#                                          Minicalc
+# var_1 = float(input())
+# var_2 = float(input())
+# operation = input()
+#
+# try:
+#     dict_operations = {
+#         '+': var_1 + var_2,
+#         '*': var_1 * var_2,
+#         '-': var_1 - var_2,
+#         'pow': var_1 ** var_2,
+#         '/': var_1 / var_2,
+#         'mod': var_1 % var_2,
+#         'div': var_1 // var_2,
+#     }
+#
+#     print(dict_operations[operation])
+# except ZeroDivisionError:
+#     dict_operations = {
+#         '+': var_1 + var_2,
+#         '*': var_1 * var_2,
+#         '-': var_1 - var_2,
+#         'pow': var_1 ** var_2
+#     }
+#     if operation in ('/', 'div', 'mod'):
+#         print('Division by 0!')
+#     else:
+#         print(dict_operations[operation])
