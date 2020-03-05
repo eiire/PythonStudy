@@ -1,13 +1,14 @@
 import string
 import sys
 
-sys.stdin = open("input.txt", "r")
+sys.stdin = open("input2.txt", "r")
 
 
 class Hierarchy:
     dictinary_classes = {}
     all_parents = []
     lst_res = ""
+    list_new_exception = []
 
     def add(self, name: string, parents=None) -> None:
         # As the name suggests, <filter> creates a list of elements for which a function returns true.
@@ -37,35 +38,19 @@ class Hierarchy:
 
         n_2 = int(sys.stdin.readline())
         for i in range(n_2):
-            try: #  X parent X and
-                my_str = sys.stdin.readline().split(' ')
-                my_str[1] = ''.join(list(filter(lambda ch: ch != '\n', my_str[1])))
-            except IndexError:
-                my_str += ''.join(list(filter(lambda ch: ch != '\n', my_str[0])))
-                my_str[0] = ''.join(list(filter(lambda ch: ch != '\n', my_str[0])))
+            my_str = sys.stdin.readline().split('\n')
+            object_hierarchy.is_base_of(my_str[0], my_str[0])
+            self.list_new_exception += my_str
 
-            check_nonexistent_class = 0
-            for key in self.dictinary_classes:
-                if my_str[1] == key:
-                    check_nonexistent_class = 1
-
-            if my_str[0] == my_str[1]:
-                print('Yes')
-            elif check_nonexistent_class == 1:
-                object_hierarchy.is_base_of(my_str[0], my_str[1])
-                fl = 0
-                print(self.all_parents)
-                for parents in self.all_parents:
-                    if my_str[0] == parents and fl != 1:
-                        print('Yes')
+            fl = 0
+            #  if from all parent is being collision from already geted exception then not work with him
+            for parent in self.all_parents:
+                for exeption in self.list_new_exception:
+                    if parent == exeption and fl == 0:
+                        print(''.join(my_str))
                         fl = 1
-                if fl == 0:
-                    print('No')
-            else:
-                print('No')
-                print(self.all_parents)
-            self.all_parents.clear()  # clear list after query
 
+            self.all_parents.clear()  # clear list after query
 
 object_hierarchy = Hierarchy()
 object_hierarchy.my_input_frankenstein()
