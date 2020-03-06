@@ -1,3 +1,4 @@
+# task 2
 import string
 import sys
 
@@ -52,6 +53,40 @@ class Hierarchy:
 
             self.all_parents.clear()  # clear list after query
 
+
 object_hierarchy = Hierarchy()
 object_hierarchy.my_input_frankenstein()
+
+
 # object_hierarchy.print()
+
+# task 3
+class NonPositiveError(Exception):
+    pass
+
+
+class PositiveList(list):
+    def append(self, x):
+        if x > 0:
+            super(PositiveList, self).append(x)
+        else:
+            raise NonPositiveError
+
+
+# lst = PositiveList()
+# lst.append(4)
+# lst.append(-3)
+
+# task 1
+def foo():
+    pass
+
+
+try:
+    foo()
+except ZeroDivisionError:
+    print(type(ZeroDivisionError()).__name__)
+except ArithmeticError:
+    print(type(ArithmeticError()).__name__)
+except AssertionError:
+    print(type(AssertionError()).__name__)
