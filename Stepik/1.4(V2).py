@@ -34,7 +34,7 @@ def add(dict_namespaces, namespace, var):
 
 # create <namespace> <parent> –  создать новое пространство имен с именем <namespace> внутри пространства <parent>
 def create(dict_namespaces, namespace, parent):
-    dict_namespaces.update({namespace: {'variables': [''], 'parent': parent}})
+    dict_namespaces.update({namespace: {'variables': [], 'parent': parent}})
 
 
 # get <namespace> <var> – получить имя пространства, из которого будет взята переменная <var> при запросе из

@@ -129,6 +129,3 @@ def get(dict_nspaces, namespace, var):
 
 
 my_namespaces()
-
-{'global': [{'first': [{'second': [{'third': []}]}, 'my_var']}]}
-{'global': [{'a': ['a1', 'a2', 'a3', {'sub_a': ['a000']}]}]}

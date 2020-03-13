@@ -1,6 +1,7 @@
 import re
 import sys
 
+sys.stdin = open("for_reg.txt")
 
 def task_1():
     pattern = r"cat"
@@ -65,9 +66,24 @@ def task_6():
     for line in sys.stdin:
         print(re.sub(pattern, 'computer', line).strip())
 
-# task_6()
-# task_5()
-# task_4()
-# task_3()
-# task_2()
-# task_1()
+
+def task_7():
+
+    pattern = r"\b[aA]+\b"
+    for line in sys.stdin:
+        print(re.sub(pattern, "argh", line, 1))
+
+
+def task_8():
+    for line in sys.stdin:
+        work_word = re.sub(r"(\b\w)(\w)", r"\2\1", line)
+        print(work_word.strip())
+
+
+def task_9():
+    for line in sys.stdin:
+        work_word = re.sub(r"(\w)(\1+)", r"\1", line)
+        print(work_word.strip())
+
+
+task_9()
