@@ -67,15 +67,6 @@ def j(dict_nspaces, namespace, adder):
             if type(e) == dict:
                 j(e, namespace, adder)
 
-# def check_for_exist(dict_nspaces, namespace, adder):
-#     for k, lst_val in dict_nspaces.items():
-#         for el in lst_val:
-#             if adder == el:
-#                 yield el
-#
-#             if type(el) == dict:
-#                 check_for_exist(el, namespace, adder)
-
 
 #  Иду по всем ключам и значениям, из значений ищу словарь и иду потов по нему --> захожу вглубь (рекурсией)
 def add(dict_nspaces, namespace, adder):
