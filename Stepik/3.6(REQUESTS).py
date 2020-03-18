@@ -57,4 +57,4 @@ def task_2():
         for artist in res:
             file.write(str(artist[0]) + '\n')
 
-# task_2()
+task_2()
