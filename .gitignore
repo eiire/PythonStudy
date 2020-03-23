@@ -5,3 +5,7 @@ Stepik/.idea/*
 Stepik/__pycache__/*
 Cursera/.idea/*
 Cursera/parser/wiki/*
+Cursera/__pycache__/*
+Cursera/mysql_sample/__pycache__/*
+Cursera/converter_sample/__pycache__/*
+Cursera/regexp_sample/__pycache__/*

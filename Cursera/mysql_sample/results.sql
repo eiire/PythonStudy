@@ -23,10 +23,10 @@ select p.name, avg(s.total/s.quantity) as 'avg(total/quantity)' from product as 
 select name from (select p.name from product as p join sale as s on p.product_id = s.product_id join store on s.store_id = store.store_id  group by p.name, store.store_id) as j group by name having count(*)=1;
 
 -- 8. Получить названия всех складов, с которых продавался только один продукт
-select * from store;
+select name from (select store.name from product as p join sale as s on p.product_id = s.product_id join store on s.store_id = store.store_id  group by p.name, store.store_id) as j group by name having count(*)=1;
 
 -- 9. Выберите все ряды (все поля) из продаж, в которых сумма продажи (total) максимальна (равна максимальной из всех встречающихся)
-select * from store;
+select sale_id, product_id, store_id, quantity, total, date  from sale join (select max(total) as jopa from sale) as f on f.jopa = sale.total;
 
 -- 10. Выведите дату самых максимальных продаж, если таких дат несколько, то самую раннюю из них
-select * from store;
+select res.date from (select max(m.maxi) as maxi, m.date from (select sum(total) as maxi, date from sale group by date) as m group by m.date) as res order by res.maxi desc limit 1;
