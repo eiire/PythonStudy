@@ -9,3 +9,9 @@ Cursera/__pycache__/*
 Cursera/mysql_sample/__pycache__/*
 Cursera/converter_sample/__pycache__/*
 Cursera/regexp_sample/__pycache__/*
+Cursera/coursera_assignment_tmp/.idea/*
+Cursera/coursera_assignment_tmp/.git/*
+Cursera/coursera_assignment_tmp/venv/*
+Cursera/routing/venv/*
+Cursera/routing/.idea/*
+Cursera/routing/routing/__pycache__/*
