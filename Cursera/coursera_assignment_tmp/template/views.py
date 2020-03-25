@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template.defaulttags import register
-from django.template import *
-# Create your views here.
+
 
 # (HTML) Обращение к ключам словаря, списка и кортежа через '.' (аналогично для методов)
 def echo(request):
@@ -34,11 +32,6 @@ def echo(request):
 
     # print(context_for_var)
     return HttpResponse(status=200, content=render(request, 'echo.html', context=data))
-
-
-@register.filter
-def get_item(dictionary, key):
-    return dictionary.get(key)
 
 
 def filters(request):
