@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'routing',
     'template',
-    # 'db'
+    'db',
 ]
 
 MIDDLEWARE = [
