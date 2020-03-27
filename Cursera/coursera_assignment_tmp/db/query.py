@@ -89,26 +89,33 @@ def get_topic_count():
     return Blog.objects.all().annotate(topic_count=Count('topic')).order_by('topic_count')
 
 
-
+# Получить среднее количество топиков в блоге
 def get_avg_topic_count():
-    return Blog.objects.all().annotate(topic_count=Count('topic')).order_by('topic_count')
+    return Blog.objects.all().annotate(topic_count=Count('topic')).aggregate(avg=Avg('topic_count'))
 
 
 def get_blog_that_have_more_than_one_topic():
-    pass
+    return Blog.objects.all().annotate(topic_count=Count('topic')).filter(topic_count__gte=1)
 
 
+# Получить все топики автора с first_name u1
 def get_topic_by_u1():
-    pass
+    user_u1 = User.objects.get(first_name='u1')
+    return Topic.objects.all().filter(author=user_u1)
 
 
+#  Найти пользователей, у которых нет блогов, отсортировать по возрастанию id
 def get_user_that_dont_have_blog():
-    pass
+    return User.objects.filter(blog__author__isnull=True)
 
 
+# Найти топик, который лайкнули все пользователи
 def get_topic_that_like_all_users():
-    pass
+    # print(Topic.objects.all().annotate(caunt_res=Count('likes__id')).get(caunt_res=3))
+    num_users = User.objects.aggregate(number=Count('pk'))
+    return Topic.objects.all().annotate(count_res=Count('likes__id')).filter(count_res=num_users['number'])
 
 
+# Найти топики, у которы нет лайков
 def get_topic_that_dont_have_like():
-    pass
+    return Topic.objects.all().annotate(count_res=Count('likes__id')).filter(count_res__lte=0)
