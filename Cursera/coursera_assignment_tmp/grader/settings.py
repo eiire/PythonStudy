@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'routing',
     'template',
     'db',
+    'site_layout',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'template', 'templates')
+            os.path.join(BASE_DIR, 'template', 'templates'),
+            os.path.join(BASE_DIR, 'site_layout', 'templates')
         ],
         'APP_DIRS': False,
         'OPTIONS': {
@@ -122,4 +124,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/template/static/'

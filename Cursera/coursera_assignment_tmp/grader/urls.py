@@ -19,4 +19,5 @@ urlpatterns = [
     url(r'^routing/', include('routing.urls')),
     url(r'^template/', include('template.urls')),
     url(r'^db/', include('db.urls')),
+    url(r'site_layout/', include('site_layout.urls')),
 ]
