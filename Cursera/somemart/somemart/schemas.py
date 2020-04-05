@@ -9,8 +9,8 @@ ITEMS_SCHEMA = {
         },
         'description': {
             'type': 'string',
-            'minimum': 1,
-            'maximum': 1024,
+            'minLength': 1,
+            'maxLength': 1024,
         },
         'price': {
             'type': 'integer',
@@ -32,8 +32,8 @@ REVIEW_SCHEMA = {
         },
         'grade': {
             'type': 'integer',
-            'minLength': 1,
-            'maxLength': 10,
+            'minimum': 1,
+            'maximum': 10,
         }
     },
     'required': ['text', 'grade']

@@ -1,3 +1,4 @@
+import base64
 import json
 
 from django.http import JsonResponse, HttpResponse
@@ -11,47 +12,10 @@ from jsonschema import validate
 from jsonschema import ValidationError
 
 from .models import Item, Review
-# from .schemas import ITEMS_SCHEMA, REVIEW_SCHEMA
-ITEMS_SCHEMA = {
-    '$schema': 'http://json-schema.org/schema#',
-    'type': 'object',
-    'properties': {
-        'title': {
-            'type': 'string',
-            'minLength': 1,
-            'maxLength': 64,
-        },
-        'description': {
-            'type': 'string',
-            'minLength': 1,
-            'maxLength': 1024,
-        },
-        'price': {
-            'type': 'integer',
-            'minimum': 1,
-            'maximum': 1000000,
-        }
-    },
-    'required': ['title', 'description', 'price'],
-}
-
-REVIEW_SCHEMA = {
-    '$schema': 'http://json-schema.org/schema#',
-    'type': 'object',
-    'properties': {
-        'text': {
-            'type': 'string',
-            'minLength': 1,
-            'maxLength': 1024,
-        },
-        'grade': {
-            'type': 'integer',
-            'minimum': 1,
-            'maximum': 10,
-        }
-    },
-    'required': ['text', 'grade']
-}
+#
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .schemas import ITEMS_SCHEMA, REVIEW_SCHEMA
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -60,6 +24,17 @@ class AddItemView(View):
 
     def post(self, request):
         try:
+            # BASE, AUTH, USER
+            if request.META['HTTP_AUTHORIZATION'].split(' ')[0] == 'Basic':
+                auth = base64.b64decode(request.META['HTTP_AUTHORIZATION'].split(' ')[1]).decode("UTF-8").split(':')
+                user = authenticate(username=auth[0], password=auth[1])
+                # print(type(user))
+                if user is None:
+                    return HttpResponse(status=401)
+                elif user.is_staff != 1:
+                    return HttpResponse(status=403)
+            else:
+                return HttpResponse(status=403)
             # clean = Item.objects.all()
             # clean[0].delete()
             document = json.loads(request.body)
@@ -74,6 +49,8 @@ class AddItemView(View):
             return JsonResponse({'error': 'Invalid JSON'}, status=400)
         except ValidationError as exc:
             return JsonResponse({'error': exc.message}, status=400)
+        except KeyError:
+            return HttpResponse(status=401)
 
 
 @method_decorator(csrf_exempt, name='dispatch')

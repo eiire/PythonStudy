@@ -13,7 +13,7 @@ rewiews = {
 
 
 def check_item():
-    response = requests.post("http://127.0.0.1:8000/api/v1/goods/", json=item)
+    response = requests.post("http://127.0.0.1:8000/api/v1/goods/", json=item, auth=('user', 'password'))
     print(response.content)
 
 
@@ -29,6 +29,6 @@ def check_viewinfo():
     print(response.content)
 
 if __name__ == '__main__':
-    # check_item()
-    check_rewiews()
+    check_item()
+    # check_rewiews()
     # check_viewinfo()
