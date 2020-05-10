@@ -60,6 +60,32 @@ def create_inf_word(word):
     return word_dict
 
 
+"""
+Write a function, which takes a non-negative integer (seconds) as input and returns the time in 
+a human-readable format (HH:MM:SS)
+"""
+
+
+def make_readable(seconds):
+    if len(str(seconds % 60)) == 1:
+        sec = '0' + str(seconds % 60)
+    else:
+        sec = str(seconds % 60)
+
+    if len(str(seconds // 60 % 60)) == 1:
+        _min = '0' + str(seconds // 60 % 60)
+    else:
+        _min = str(seconds // 60 % 60)
+
+    if len(str(seconds // 3600)) == 1:
+        hour = '0' + str(seconds // 3600)
+    else:
+        hour = str(seconds // 3600)
+
+    return hour + ':' + _min + ':' + sec
+
+
 if __name__ == '__main__':
     # print(josephus(["C","o","d","e","W","a","r","s"],4))
+    print(make_readable(86399))
     pass

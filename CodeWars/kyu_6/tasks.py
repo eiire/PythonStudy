@@ -79,6 +79,47 @@ def is_square(n):
         i = i + 1
 
 
+"""
+Given two arrays of strings a1 and a2 return a sorted array r in lexicographical order of the strings of a1 which are 
+substrings of strings of a2.
+"""
+
+
+def in_array(a1, a2):
+    res_list = list()
+    for el_a1 in a1:
+        for el_a2 in a2:
+            if el_a2.count(el_a1) > 0:
+                if el_a1 not in res_list:
+                    res_list.append(el_a1)
+                res_list.sort()
+                break
+
+    return res_list
+
+
+"""
+A child is playing with a ball on the nth floor of a tall building. The height of this floor, h, is known.
+He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height (a bounce of 0.66).
+His mother looks out of a window 1.5 meters from the ground.
+How many times will the mother see the ball pass in front of her window (including when it's falling and bouncing?
+"""
+
+
+def bouncingBall(h, bounce, window):
+    counter = 1
+    if h <= 0 or (bounce <= 0 or bounce >= 1) or window >= h:
+        return -1
+    new_height = h * bounce
+    while new_height > window:
+        new_height *= bounce
+        counter+=2
+
+    return counter
+
+
+
 if __name__ == '__main__':
-    # print(is_prime(4))
+    # print(in_array(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]))
+    # print(bouncingBall(30, 0.75, 1.5))
     pass

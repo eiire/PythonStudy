@@ -46,3 +46,17 @@ class self(TestCase):
         self.assertEqual(is_square(4), True, "4 is a square number")
         self.assertEqual(is_square(25), True, "25 is a square number")
         self.assertEqual(is_square(26), False, "26 is not a square number")
+
+    def test_in_array(self):
+        from CodeWars.kyu_6.tasks import in_array
+        a1 = ["live", "arp", "strong"]
+        a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
+        r = ['arp', 'live', 'strong']
+        self.assertEquals(in_array(a1, a2), r)
+        self.assertEquals(in_array(['duplicates', 'duplicates'], ['duplicates', 'duplicates']), ['duplicates'])
+
+    def test_bouncingBall(self):
+        from CodeWars.kyu_6.tasks import bouncingBall
+        self.assertEqual(bouncingBall(3, 0.66, 1.5), 3)
+        self.assertEqual(bouncingBall(30, 0.66, 1.5), 15)
+        self.assertEqual(bouncingBall(30, 0.75, 1.5), 21)
