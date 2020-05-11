@@ -22,3 +22,8 @@ class Test(TestCase):
         self.assertEqual(make_readable(60), "00:01:00")
         self.assertEqual(make_readable(86399), "23:59:59")
         self.assertEqual(make_readable(359999), "99:59:59")
+
+    def test_pig_it(self):
+        from CodeWars.kyu_5.tasks import pig_it
+        self.assertEquals(pig_it('Pig latin is cool'), 'igPay atinlay siay oolcay')
+        self.assertEquals(pig_it('This is my string'), 'hisTay siay ymay tringsay')

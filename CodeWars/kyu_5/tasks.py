@@ -85,7 +85,26 @@ def make_readable(seconds):
     return hour + ':' + _min + ':' + sec
 
 
+"""
+Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks 
+untouched.
+"""
+
+
+def pig_it(text):
+    print(text)
+    return ' '.join([checker(new_word) for new_word in text.split(' ')])
+
+
+def checker(word):
+    if word == '?' or word == '!':
+        return word
+    else:
+        return word[1:] + word[0:1] + 'ay'
+
+
 if __name__ == '__main__':
     # print(josephus(["C","o","d","e","W","a","r","s"],4))
-    print(make_readable(86399))
+    # print(make_readable(86399))
+    print(pig_it('Pig latin is cool ?'))
     pass
