@@ -25,7 +25,7 @@ class TestClasses(TestCase):
 
         self.assertEqual(get_score_res, self.get_score_res[1])
         self.assertEqual(get_answer_res, self.get_answer_res)
-        self.assertRaises(ValueError, class_b.get_loss)
+        self.assertRaises(ValueError, class_b.get_loss)  # (!)
 
     def test_ClassC(self):
         from Cursera.OOP.creating_base_classes.my_class import C
@@ -36,7 +36,3 @@ class TestClasses(TestCase):
         self.assertEqual(get_score_res, self.get_score_res[2])
         self.assertEqual(get_answer_res, self.get_answer_res)
         self.assertEqual(class_c.get_loss(), 0)
-
-    def test_polymorphism(self):
-        from Cursera.OOP.creating_base_classes.my_class import Base, A, B, C
-        class_a = A([None], [None])
