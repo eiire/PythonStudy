@@ -10,6 +10,7 @@ selenium = "==3.14.0"
 PyContracts = "==1.8.14"
 pygame = "==1.9.6"
 jupyter = "*"
+PyYaml = "==3.13"
 
 [requires]
 python_version = "3.6"
