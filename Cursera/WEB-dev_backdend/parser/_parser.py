@@ -1,6 +1,4 @@
 from bs4 import BeautifulSoup
-import unittest
-from lxml import *
 
 
 def parse(path_to_file):
@@ -123,29 +121,3 @@ def sub_lists(res, soup):
             pass
 
     res[3] = counter
-
-
-class TestParse(unittest.TestCase):
-    def test_parse(self):
-        test_cases = (
-            ('wiki/Midline_nuclear_group', [2, 0, 3, 21]),
-            ('wiki/Genus', [1, 3, 9, 19]),
-            ('wiki/Stone_Age', [13, 10, 12, 40]),
-            ('wiki/Brain', [19, 5, 25, 11]),
-            ('wiki/Artificial_intelligence', [8, 19, 13, 198]),
-            ('wiki/Python_(programming_language)', [2, 5, 17, 41]),
-            ('wiki/Spectrogram', [1, 2, 4, 7]),
-        )
-
-        for path, expected in test_cases:
-            with self.subTest(path=path, expected=expected):
-                res = parse(path)
-                # self.assertEqual(res[0], expected[0])
-                self.assertEqual(res[1], expected[1])
-                # self.assertEqual(res[2], expected[2])
-                # self.assertEqual(res[3], expected[3])
-
-
-if __name__ == '__main__':
-    unittest.main()
-    # parse('wiki/Brain')

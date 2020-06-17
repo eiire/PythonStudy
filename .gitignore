@@ -6,6 +6,7 @@ Stepik/__pycache__/*
 Cursera/.idea/*
 Cursera/WEB-dev_backdend/parser/wiki/*
 Cursera/__pycache__/*
+Cursera/WEB-dev_backdend/.idea/*
 Cursera/WEB-dev_backdend/mysql_sample/__pycache__/*
 Cursera/WEB-dev_backdend/converter_sample/__pycache__/*
 Cursera/WEB-dev_backdend/regexp_sample/__pycache__/*
@@ -16,3 +17,7 @@ Cursera/routing/venv/*
 Cursera/routing/.idea/*
 Cursera/routing/routing/__pycache__/*
 Cursera/WEB-dev_backdend/work_with_data/*
+Cursera/OOP/.idea/*
+Stepik/Basics_and_application/.idea/*
+Stepik/Test_automation/.idea/*
+Cursera/WEB-dev_backdend/somemart/.idea/*

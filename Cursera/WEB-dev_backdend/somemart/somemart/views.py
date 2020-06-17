@@ -58,8 +58,6 @@ class PostReviewView(View):
     """View для создания отзыва о товаре."""
 
     def post(self, request, item_id):
-        # Здесь должен быть ваш код
-
         # Почему нужно только так, а не как нижеы
         try:
             item = Item.objects.get(pk=item_id)
