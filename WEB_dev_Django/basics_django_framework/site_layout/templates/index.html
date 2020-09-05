@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load static %}
+{% block block_a %}{% endblock %}
+{% block block_b %}{% endblock %}
+
+{% block site_layout %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+    <body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Stackoverflow</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavDropdown" class="navbar-collapse collapse">
+                <ul class="navbar-nav mr-auto">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-2">
+                        <div class="media">
+                            <img id="main_img" src="{% static 'img/1.png' %}" class="align-self-start mr-3" alt="...">
+                        </div>
+                        <div class="row">
+                            <div class="qty mt-1 pl-7">
+                                <span class="minus bg-dark">-</span>
+                                <input style="font-size: 15px" type="number" class="count" name="qty mt-1" value="1">
+                                <span class="plus bg-dark">+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-sm-9">
+                        КАК ЖЕ У МЕНЯ ВСЕ ПЛОХО ПОЛУЧАЕТСЯ, НЕ МОГУ УЖЕ
+                        КАК ЖЕ У МЕНЯ ВСЕ ПЛОХО ПОЛУЧАЕТСЯ, НЕ МОГУ УЖЕ
+                        КАК ЖЕ У МЕНЯ ВСЕ ПЛОХО ПОЛУЧАЕТСЯ, НЕ МОГУ УЖЕ
+                        КАК ЖЕ У МЕНЯ ВСЕ ПЛОХО ПОЛУЧАЕТСЯ, НЕ МОГУ УЖЕ
+                        КАК ЖЕ У МЕНЯ ВСЕ ПЛОХО ПОЛУЧАЕТСЯ, НЕ МОГУ УЖЕ
+                        КАК ЖЕ У МЕНЯ ВСЕ ПЛОХО ПОЛУЧАЕТСЯ, НЕ МОГУ УЖЕ
+
+                        <div class="row row-conformity">
+                            <div class="_tags">
+                                Tags:
+                                <a href="#" class="badge badge-light">HELP</a>
+                                <a href="#" class="badge badge-light">HELP</a>
+                                <a href="#" class="badge badge-light">HELP</a>
+                                <a href="#" class="badge badge-light">HELP</a>
+                                <a href="#" class="badge badge-light">HELP</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <p>
+                <div class="row">
+                    <div class="media">
+                        <div class="col-2">
+                            <img id="sub_img" src="{% static 'img/1.png' %}" class="align-self-start" alt="Image">
+                            <div class="row>">
+                                <div class="qty mt-1">
+                                    <span class="minus bg-dark">-</span>
+                                    <input style="font-size: 15px" type="number" class="count" name="qty mt-1" value="1">
+                                    <span class="plus bg-dark">+</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            Despite shutdowns and other unprecedented steps to slow the spread of COVID-19, epidemiologists believe that a majority of peopleTrusted Source will eventually get the easily transmitted viral disease for which humans have no natural immunity.
+                        </div>
+                    </div>
+                    <br>
+                    <div class="media">
+                        <div class="col-2">
+                            <img id="sub_img" src="{% static 'img/1.png' %}" class="align-self-start" alt="Image">
+                            <div class="row>">
+                                <div class="qty mt-1">
+                                    <span class="minus bg-dark">-</span>
+                                    <input style="font-size: 15px" type="number" class="count" name="qty mt-1" value="1">
+                                    <span class="plus bg-dark">+</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            Despite shutdowns and other unprecedented steps to slow the spread of COVID-19, epidemiologists believe that a majority of peopleTrusted Source will eventually get the easily transmitted viral disease for which humans have no natural immunity.
+                        </div>
+                    </div>
+                    <br>
+                    <div class="media">
+                        <div class="col-2">
+                            <img id="sub_img" src="{% static 'img/1.png' %}" class="align-self-start" alt="Image">
+                            <div class="row>">
+                                <div class="qty mt-1">
+                                    <span class="minus bg-dark">-</span>
+                                    <input style="font-size: 15px" type="number" class="count" name="qty mt-1" value="1">
+                                    <span class="plus bg-dark">+</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            Despite shutdowns and other unprecedented steps to slow the spread of COVID-19, epidemiologists believe that a majority of peopleTrusted Source will eventually get the easily transmitted viral disease for which humans have no natural immunity.
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"> Inter comment here </textarea>
+                    <div style="margin-right: 100%"> <button type="submit" class="btn btn-primary mt-2 "> Submit </button> </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-0 ml-5">
+                <div class="row align-items-start">
+                    <ul>
+                        <h3>Popular tags:</h3>
+                        <li><a href="...">Django</a>
+                        <li><a href="...">Python</a>
+                        <li><a href="...">SMERT</a>
+                    </ul>
+                </div>
+                <div class="row mt-4">
+                    <ul>
+                        <h3>Best members:</h3>
+                        <li><a href="...">Human</a>
+                        <li><a href="...">KILLME</a>
+                        <li><a href="...">Human</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.count').prop('disabled', true);
+            $(document).on('click','.plus', function() {
+                $('.count').val(parseInt($('.count').val()) + 1 );
+            });
+
+            $(document).on('click','.minus', function() {
+                $('.count').val(parseInt($('.count').val()) - 1 );
+                if ($('.count').val() == 0) {
+                    $('.count').val(1);
+                }
+            });
+        });
+    </script>
+    </body>
+    </html>
+{% endblock %}
